@@ -1,0 +1,62 @@
+[
+  {
+    "songId": 1,
+    "songName": "流行音乐合集",
+    "image": "",
+    "playCount": 10
+  },
+  {
+    "songId": 2,
+    "songName": "民谣音乐合集",
+    "image": "",
+    "playCount": 100
+  },
+  {
+    "songId": 3,
+    "songName": "新歌音乐合集",
+    "image": "",
+    "playCount": 1000
+  },
+  {
+    "songId": 4,
+    "songName": "传统音乐合集",
+    "image": "",
+    "playCount": 10000
+  },
+  {
+    "songId": 5,
+    "songName": "好听音乐合集",
+    "image": "",
+    "playCount": 100000
+  },
+  {
+    "songId": 6,
+    "songName": "不好听音乐合集",
+    "image": "",
+    "playCount": 1000000
+  },
+  {
+    "songId": 7,
+    "songName": "昨天音乐合集",
+    "image": "",
+    "playCount": 10000000
+  },
+  {
+    "songId": 8,
+    "songName": "今天音乐合集",
+    "image": "",
+    "playCount": 100000000
+  },
+  {
+    "songId": 9,
+    "songName": "明天音乐合集",
+    "image": "",
+    "playCount": 1000000000
+  },
+  {
+    "songId": 10,
+    "songName": "没有音乐合集",
+    "image": "",
+    "playCount": 1
+  }
+]

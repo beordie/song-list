@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    cloud.netease.com/name: eureka
+  name: deployment-eureka
+  namespace: song
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        cloud.netease.com/name: eureka
+    spec:
+      containers:
+        - image: beordie-eureka:qqq
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /eureka/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            successThreshold: 1
+            timeoutSeconds: 10
+          name: eureka
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+              name: http
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /eureka/health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            successThreshold: 1
+            timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: 1
+              memory: 1Gi
+            requests:
+              cpu: 100m
+              memory: 100Mb

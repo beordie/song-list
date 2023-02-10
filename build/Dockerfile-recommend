@@ -1,0 +1,23 @@
+FROM harbor.cloud.netease.com/qzprod/jdk11-openjdk-skiff:v1.0-220801
+
+RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install \
+    netcat \
+    dnsutils \
+    procps \
+    iputils-ping \
+    curl \
+    telnet \
+    vim \
+    && apt-get -y --purge autoremove \
+    && apt-get autoclean \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone
+
+WORKDIR /
+COPY ./jar/recommend-1.0-SNAPSHOT.jar ./
+
+EXPOSE 8083
+CMD java -jar recommend-1.0-SNAPSHOT.jar -Duser.timezone=GMT+08

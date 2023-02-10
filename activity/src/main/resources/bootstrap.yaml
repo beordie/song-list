@@ -1,0 +1,13 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: activity-module
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.com/eureka
